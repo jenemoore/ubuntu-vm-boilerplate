@@ -36,7 +36,7 @@ echo "Updating Console Font"
 setfont /usr/share/consolefonts/Uni3-Terminus28x14.psf.gz
 
 echo "Updating Networking Settings"
-sed -i "/addresses/d" /etc/netplan/01-netcfg.yaml
+sed -i '11d,$d' /etc/netplan/01-netcfg.yaml
 
 echo "Done!"
 
