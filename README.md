@@ -7,5 +7,5 @@ Updated to reset the console font to make working on the Proxmox console on a la
 ## Usage
 
 ```sh
-sudo bash -c "bash <(wget -qO- https://raw.githubusercontent.com/jenemoore/ubuntu-vm-boilerplate/master/run.sh)"
+wget -O- https://github.com/jenemoore/vm-config/master/run.sh | bash
 ```
