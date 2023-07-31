@@ -7,5 +7,5 @@ Updated to reset the console font to make working on the Proxmox console on a la
 ## Usage
 
 ```sh
-wget -O- https://github.com/jenemoore/vm-config/master/run.sh | bash
+wget -O- https://raw.githubusercontent.com/jenemoore/vm-config/master/run.sh | bash
 ```
