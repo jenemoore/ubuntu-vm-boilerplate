@@ -1,0 +1,181 @@
+﻿Diagnose log at 2023-07-31T15:14:33Z
+
+AppPath: /usr/local/bin/git-credential-manager
+InstallDir: /usr/local/share/gcm-core/
+Version: 2.1.2
+
+------------
+Diagnostic: Environment
+Skipped: False
+Success: True
+Exception: None
+Log:
+OSType: Linux
+OSVersion: Linux lively 5.19.0-50-generic #50-Ubuntu SMP PREEMPT_DYNAMIC Mon Jul 10 18:24:29 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+Reading environment variables... OK
+ Variables:
+GIT_TRACE2_PARENT_SID=c035c885-344d-4444-8210-8386209ab6d6
+TERM=rxvt-unicode-256color
+PWD=/home/jen/ubuntu-vm-boilerplate
+PATH=/home/jen/.pyenv/shims:/home/jen/.pyenv/bin:/home/jen/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin:/usr/local/go/work/bin
+_=/usr/local/bin/git-credential-manager
+XDG_SESSION_TYPE=x11
+HOME=/home/jen
+XDG_SESSION_CLASS=user
+GTK_MODULES=gail:atk-bridge
+XDG_SESSION_DESKTOP=i3
+USER=jen
+DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0
+XDG_CONFIG_DIRS=/etc/xdg/xdg-i3:/etc/xdg
+XDG_RUNTIME_DIR=/run/user/1000
+LANG=en_US.UTF-8
+GDM_LANG=en_US
+GDMSESSION=i3
+OLDPWD=/home/jen
+XDG_SESSION_ID=c2
+DISPLAY=:0
+MANDATORY_PATH=/usr/share/gconf/i3.mandatory.path
+GPG_AGENT_INFO=/run/user/1000/gnupg/S.gpg-agent:0:1
+XDG_DATA_DIRS=/usr/share/i3:/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop
+XDG_SEAT=seat0
+GTK3_MODULES=xapp-gtk3-module
+DESKTOP_SESSION=i3
+LANGUAGE=en_US
+QT_ACCESSIBILITY=1
+SHELL=/usr/bin/zsh
+SHLVL=1
+GOPATH=/usr/local/go/work
+XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session0
+PYENV_ROOT=/home/jen/.pyenv
+XMODIFIERS=@im=ibus
+XDG_CURRENT_DESKTOP=i3
+QT_IM_MODULE=ibus
+DEFAULTS_PATH=/usr/share/gconf/i3.default.path
+LOGNAME=jen
+XDG_GREETER_DATA_DIR=/var/lib/lightdm-data/jen
+GOROOT=/usr/local/go
+CLUTTER_IM_MODULE=ibus
+XAUTHORITY=/home/jen/.Xauthority
+GTK_IM_MODULE=ibus
+COLORTERM=rxvt-xpm
+DESKTOP_STARTUP_ID=i3/urxvt	/2095-19-lively_TIME488474449
+WINDOWID=98566154
+XDG_VTNR=7
+I3SOCK=/run/user/1000/i3/ipc-socket.2095
+COLORFGBG=7;default;8
+PYENV_SHELL=zsh
+
+
+------------
+Diagnostic: File system
+Skipped: False
+Success: True
+Exception: None
+Log:
+Temporary directory is '/tmp/'...
+Checking basic file I/O...
+Writing to temporary file '/tmp/dc4145fdba7ec826f0352227'... OK
+Reading from temporary file '/tmp/dc4145fdba7ec826f0352227'... OK
+Deleting temporary file '/tmp/dc4145fdba7ec826f0352227'... OK
+Testing IFileSystem instance...
+UserHomePath: /home/jen
+UserDataDirectoryPath: /home/jen/.gcm
+GetCurrentDirectory(): /home/jen/ubuntu-vm-boilerplate
+
+------------
+Diagnostic: Networking
+Skipped: False
+Success: True
+Exception: None
+Log:
+Checking networking and HTTP stack...
+Creating HTTP client... OK
+IsNetworkAvailable: True
+Sending HEAD request to http://example.com... OK
+Sending HEAD request to https://example.com... OK
+Acquiring free TCP port... OK
+Testing local HTTP loopback connections...
+Creating new HTTP listener for http://localhost:43723/... OK
+Waiting for loopback connection... OK
+Writing response... OK
+Waiting for response data... OK
+Loopback connection data OK
+
+------------
+Diagnostic: Git
+Skipped: False
+Success: True
+Exception: None
+Log:
+Getting Git version... OK
+Git version is '2.34.1'
+Locating current repository... OK
+Git repository at '/home/jen/ubuntu-vm-boilerplate/.git'
+Listing all Git configuration... OK
+Git configuration:
+file:/home/jen/.gitconfig	core.editor=vim
+file:/home/jen/.gitconfig	init.defaultbranch=origin
+file:/home/jen/.gitconfig	user.name=Jen E Moore
+file:/home/jen/.gitconfig	user.email=66687031+jenemoore@users.noreply.github.com
+file:/home/jen/.gitconfig	credential.helper=
+file:/home/jen/.gitconfig	credential.helper=/usr/local/bin/git-credential-manager
+file:/home/jen/.gitconfig	credential.credentialstore=gpg
+file:/home/jen/.gitconfig	credential.https://dev.azure.com.usehttppath=true
+file:.git/config	core.repositoryformatversion=0
+file:.git/config	core.filemode=true
+file:.git/config	core.bare=false
+file:.git/config	core.logallrefupdates=true
+file:.git/config	remote.origin.url=https://github.com/jenemoore/ubuntu-vm-boilerplate.git
+file:.git/config	remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+file:.git/config	branch.master.remote=origin
+file:.git/config	branch.master.merge=refs/heads/master
+
+
+------------
+Diagnostic: Credential storage
+Skipped: False
+Success: False
+Exception:
+GitCredentialManager.Trace2Exception: Failed to encrypt file '/home/jen/.password-store/git/https/example.com/ea569e73e60c4fd991975ba1abb25d27/john.doe.gpg' with gpg. exit=2, out=, err=gpg: .gnupg/openpgp-revocs.d/12046E2F53FA10096102FFA0F8F98FE568991745.rev: skipped: No public key
+gpg: [stdin]: encryption failed: No public key
+
+   at GitCredentialManager.Gpg.EncryptFile(String path, String gpgId, String contents)
+   at GitCredentialManager.Interop.Posix.GpgPassCredentialStore.SerializeCredential(FileCredential credential)
+   at GitCredentialManager.PlaintextCredentialStore.AddOrUpdate(String service, String account, String secret)
+   at GitCredentialManager.CredentialStore.AddOrUpdate(String service, String account, String secret)
+   at GitCredentialManager.Diagnostics.CredentialStoreDiagnostic.RunInternalAsync(StringBuilder log, IList`1 additionalFiles)
+   at GitCredentialManager.Diagnostics.Diagnostic.RunAsync()
+Log:
+ICredentialStore instance is of type: CredentialStore
+Writing test credential...Deleting test credential... OK
+
+------------
+Diagnostic: Microsoft authentication (AAD/MSA)
+Skipped: False
+Success: True
+Exception: None
+Log:
+Broker is not enabled.
+Flow type is: Auto
+Gathering MSAL token cache data... OK
+CacheDirectory: /home/jen/.local/.IdentityService
+CacheFileName: msal.cache
+CacheFilePath: /home/jen/.local/.IdentityService/msal.cache
+KeyringCollection: 
+KeyringSchemaName: 
+KeyringSecretLabel: 
+KeyringAttribute1: (,)
+KeyringAttribute2: (,)
+Creating cache helper... OK
+Verifying MSAL token cache persistence... OK
+
+------------
+Diagnostic: GitHub API
+Skipped: False
+Success: True
+Exception: None
+Log:
+Using 'https://github.com/' as API target.
+Querying '/meta' endpoint... OK
+

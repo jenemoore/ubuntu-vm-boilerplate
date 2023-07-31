@@ -33,10 +33,8 @@ sed -i "s/$HOSTNAME/$newHostname/g" /etc/hostname
 hostnamectl set-hostname $newHostname
 
 echo "Updating Console Font"
-setfont /usr/share/consolefonts/Uni3-Terminus28x14.psf.gz
+dpkg-reconfigure console-setup
 
-echo "Updating Networking Settings"
-sed -i '11d,$d' /etc/netplan/01-netcfg.yaml
 
 echo "Done!"
 
